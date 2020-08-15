@@ -31,8 +31,7 @@ def remove_digits(data):
 	Returns:
 		List[str]: List of data without digigts.
 	"""
-	data = [''.join(x for x in i if x.isalpha()) for i in data]
-	ndata = []
+	data, ndata = [''.join(x for x in i if x.isalpha()) for i in data], []
 	for e in data:
 		if e is '': continue
 		elif e is None: continue
@@ -56,8 +55,7 @@ def process(out_file='', documents=None, *args, **kwargs):
 		with open(doc, 'r') as file: e = file.read()
 		e = wmatcher.findall(e.decode('utf8'))
 		data.extend(e)
-	data = remove_digits(data)
-	data = u' '.join(x for x in sorted(list(set(data)), cmp=cmp_func)).encode('utf-8').replace(' ', '\n')
+	data = u' '.join(x for x in sorted(list(set(remove_digits(data))), cmp=cmp_func)).encode('utf-8').replace(' ', '\n')
 	with open(out_file, 'w') as file: file.write(data)
 
 
