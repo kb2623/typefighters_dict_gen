@@ -1,10 +1,6 @@
-<p align="center">
-![icon](img/XsfnkhGp_400x400.png "Logo Title Text 1")
-</p>
+![icon](img/XsfnkhGp_400x400.png "Logo Title Text 1"){ style="display: block; margin: 0 auto" }
 
-<p align="center">
 ![title](img/title.png "Logo Title Text 1")
-</p>
 
 # typefighters_dict_gen
 
