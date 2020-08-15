@@ -55,7 +55,7 @@ def process(out_file='', documents=None, *args, **kwargs):
 		with open(doc, 'r') as file: e = file.read()
 		e = wmatcher.findall(e.decode('utf8'))
 		data.extend(e)
-	data = u' '.join(x for x in sorted(list(set(remove_digits(data))), cmp=cmp_func)).encode('utf-8').replace(' ', '\n')
+	data = u'\n'.join(x for x in sorted(list(set(remove_digits(data))), cmp=cmp_func)).encode('utf-8')
 	with open(out_file, 'w') as file: file.write(data)
 
 
